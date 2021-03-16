@@ -13,6 +13,6 @@ jobs:
     - name: Check out repo
       uses: actions/checkout@v2
     - name: Fetch data
-      uses: githubocto/flat@v1
+      uses: githubocto/flat@main
       with:
         http_url: 'https://api.vaccinateca.com/v1/locations.json'
