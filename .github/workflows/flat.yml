@@ -1,0 +1,17 @@
+name: data
+on:
+  schedule:
+    - cron: "* * * * *"
+  push:
+    branches:
+      - main
+jobs:
+  omg:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v2
+      - name: Fetch data
+        uses: githubocto/flat@v1
+        with:
+          http_url: https://covid.cdc.gov/covid-data-tracker/COVIDData/getAjaxData?id=vaccination_data
