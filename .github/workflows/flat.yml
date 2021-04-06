@@ -1,5 +1,6 @@
 name: data
 on:
+  workflow_dispatch:
   schedule:
     - cron: "* * * * *"
 jobs:
