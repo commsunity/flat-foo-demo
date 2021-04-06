@@ -5,4 +5,16 @@ on:
   push:
     branches:
       - main
-jobs: {}
+jobs:
+  flights:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v2
+      - name: Fetch data
+        uses: githubocto/flat@v1
+        with:
+          sql_connstring: ${{ FLAT_GKM62R_CONNSTRING }}
+          sql_queryfile: ./query.sql
+          sql_format: csv
+          outfile_basename: data
