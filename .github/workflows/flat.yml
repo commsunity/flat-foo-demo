@@ -22,3 +22,10 @@ jobs:
         with:
           http_url: https://api.vaccinateca.com/v1/locations.json
           outfile_basename: post_process_data
+      - name: Fetch data
+        uses: githubocto/flat@v1
+        with:
+          sql_connstring: ${{ secrets.FLAT_32QY32_CONNSTRING }}
+          sql_queryfile: ./query.sql
+          sql_format: csv
+          outfile_basename: results
