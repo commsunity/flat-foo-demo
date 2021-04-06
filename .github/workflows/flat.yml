@@ -1,0 +1,16 @@
+name: data
+on:
+  schedule:
+    - cron: "* * * * *"
+  workflow_dispatch: {}
+jobs:
+  vax_data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v2
+      - name: Fetch data
+        uses: githubocto/flat@v1
+        with:
+          http_url: https://api.vaccinateca.com/v1/locations.json
+          postprocess: ./postprocessor.js
