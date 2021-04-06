@@ -17,3 +17,8 @@ jobs:
           http_url: https://api.vaccinateca.com/v1/locations.json
           outfile_basename: data
           postprocess: ./postprocessor.js
+      - name: Fetch data
+        uses: githubocto/flat@v1
+        with:
+          http_url: https://api.vaccinateca.com/v1/locations.json
+          outfile_basename: post_process_data
