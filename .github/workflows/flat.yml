@@ -7,6 +7,8 @@ jobs:
   vax_data:
     runs-on: ubuntu-latest
     steps:
+      - name: Setup deno
+        uses: denolib/setup-deno@v2
       - name: Check out repo
         uses: actions/checkout@v2
       - name: Fetch data
