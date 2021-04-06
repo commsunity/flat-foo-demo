@@ -14,7 +14,7 @@ jobs:
       - name: Fetch data
         uses: githubocto/flat@v1
         with:
-          sql_connstring: ${{ FLAT_GKM62R_CONNSTRING }}
+          sql_connstring: ${{ secrets.FLAT_GKM62R_CONNSTRING }}
           sql_queryfile: ./query.sql
           sql_format: csv
           outfile_basename: data
